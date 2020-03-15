@@ -84,7 +84,8 @@ DerivedData/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -294,3 +295,8 @@ tmp/
 temp/
 
 # End of https://www.gitignore.io/api/reactnative
+
+/lib
+.bsb.lock
+.merlin
+*.bs.js

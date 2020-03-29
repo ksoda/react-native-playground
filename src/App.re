@@ -68,6 +68,36 @@ module Card = {
     </View>;
 };
 
+module Counter = {
+  type action =
+    | Tick;
+
+  type state = {count: int};
+
+  [@react.component]
+  let make = () => {
+    let (state, dispatch) =
+      React.useReducer(
+        (state, action) =>
+          switch (action) {
+          | Tick => {count: state.count + 1}
+          },
+        {count: 0},
+      );
+
+    React.useEffect0(() => {
+      let timerId = Js.Global.setInterval(() => dispatch(Tick), 1000);
+      Some(() => Js.Global.clearInterval(timerId));
+    });
+
+    <View style=styles##sectionContainer>
+      <Text style=styles##sectionDescription>
+        {state.count->string_of_int->ReasonReact.string}
+      </Text>
+    </View>;
+  };
+};
+
 [@react.component]
 let app = () =>
   <>
@@ -75,22 +105,15 @@ let app = () =>
     <SafeAreaView>
       <ScrollView
         contentInsetAdjustmentBehavior=`automatic style=styles##scrollView>
-        {
-          Global.hermesInternal->Belt.Option.isNone ?
-            React.null :
-            <View style=styles##engine>
-              <Text style=styles##footer>
-                "Engine: Hermes"->React.string
-              </Text>
-            </View>
-        }
+        {Global.hermesInternal->Belt.Option.isNone
+           ? React.null
+           : <View style=styles##engine>
+               <Text style=styles##footer>
+                 "Engine: Hermes"->React.string
+               </Text>
+             </View>}
         <View style=styles##body>
-          <Card title="Step One">
-            "Edit "->React.string
-            <Text style=styles##highlight> "src/App.re"->React.string </Text>
-            " to change this screen and then come back to see your edits."
-            ->React.string
-          </Card>
+          <Counter />
           <Card title="Learn More">
             "Read the docs to discover what to do next:"->React.string
           </Card>

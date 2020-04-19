@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <RCTScrollView
+    contentInsetAdjustmentBehavior="automatic"
+    style={
+      Object {
+        "backgroundColor": "#F3F3F3",
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginTop": 32,
+              "paddingHorizontal": 24,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#444",
+                "fontSize": 18,
+                "fontWeight": "400",
+                "marginTop": 8,
+              }
+            }
+          >
+            0
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 32,
+              "paddingHorizontal": 24,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#000",
+                "fontSize": 24,
+                "fontWeight": "600",
+              }
+            }
+          >
+            Learn More
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#444",
+                "fontSize": 18,
+                "fontWeight": "400",
+                "marginTop": 8,
+              }
+            }
+          >
+            Read the docs to discover what to do next:
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;

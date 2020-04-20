@@ -113,10 +113,11 @@ let app = () =>
                </Text>
              </View>}
         <View style=styles##body>
-          <Counter />
+          <TodoApp />
           <Card title="Learn More">
             "Read the docs to discover what to do next:"->React.string
           </Card>
+          <Counter />
         </View>
       </ScrollView>
     </SafeAreaView>
